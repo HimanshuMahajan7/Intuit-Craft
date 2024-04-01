@@ -1,0 +1,11 @@
+-- Databases
+Databases/intuit_comment.sql
+
+-- DB & Tables
+Tables/intuit_comment.users.sql
+Tables/intuit_comment.posts.sql
+Tables/intuit_comment.comments.sql
+Tables/intuit_comment.engagements.sql
+
+-- Procedures
+Procedures/intuit_comment.createComment.sql
