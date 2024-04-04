@@ -61,7 +61,7 @@ public class CommentServiceImpl implements CommentService {
             if (updatedCount != 0) {
                 commentEntity.get().setText(commentRequestDto.getText());
             }
-            return mapper.map(commentEntity, CommentResponseDto.class);
+            return mapper.map(commentEntity.get(), CommentResponseDto.class);
         }
         throw new ResourceNotFoundException("Comment not found with id: " + commentId);
     }
@@ -83,7 +83,7 @@ public class CommentServiceImpl implements CommentService {
         if (comments.isEmpty()) {
             throw new NoContentException("No comments found");
         }
-        return comments.stream().map(commentEntity -> mapper.map(commentEntity, CommentResponseDto.class)).toList();
+        return comments.getContent().stream().map(commentEntity -> mapper.map(commentEntity, CommentResponseDto.class)).toList();
     }
 
     @Override
@@ -107,7 +107,7 @@ public class CommentServiceImpl implements CommentService {
         if (comments.isEmpty()) {
             throw new NoContentException("No comments found");
         }
-        return comments.stream().map(commentEntity -> mapper.map(commentEntity, CommentResponseDto.class)).toList();
+        return comments.getContent().stream().map(commentEntity -> mapper.map(commentEntity, CommentResponseDto.class)).toList();
     }
 
     @Override

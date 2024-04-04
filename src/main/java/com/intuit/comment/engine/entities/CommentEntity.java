@@ -6,7 +6,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
@@ -19,6 +22,9 @@ import java.util.Date;
  */
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "comments")
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -61,5 +67,5 @@ public class CommentEntity {
 
     @Column(nullable = false, columnDefinition = "TINYINT")
     private short status = 1;
-    
+
 }
